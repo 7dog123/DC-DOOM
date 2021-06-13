@@ -13,11 +13,6 @@ jobs:
     container: kazade/dreamcast-sdk:latest
     steps:
     
-
-    - name: Install dependencies
-      run: |
-        sudo apt install git zip
-
     - uses: actions/checkout@v2
     - run: |
         git fetch --prune --unshallow

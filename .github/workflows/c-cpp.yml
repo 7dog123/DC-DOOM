@@ -16,7 +16,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        apk add build-base git zip
+        sudo apt-get install git zip
 
     - uses: actions/checkout@v2
     - run: |

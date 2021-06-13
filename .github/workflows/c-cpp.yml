@@ -16,7 +16,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get install git zip
+        sudo apt install git zip
 
     - uses: actions/checkout@v2
     - run: |

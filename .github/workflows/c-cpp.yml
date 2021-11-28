@@ -10,24 +10,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: kazade/dreamcast-sdk:latest
+    container: haydenkow/nu-dcdev:release-4.7.3-rc3
     steps:
     
     - uses: actions/checkout@v2
     - run: |
         git fetch --prune --unshallow
-
-   
-
     - name: Compile doom
       run: |
         make
         ls
-    
     - name: Get short SHA
       id: slug
       run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-
     - name: Upload artifacts
       if: ${{ success() }}
       uses: actions/upload-artifact@v2
@@ -35,7 +30,6 @@ jobs:
         name: doom-${{ steps.slug.outputs.sha8 }}
         path: |
             DCDoom.bin
-
     - name: Create release for master branch
       if: github.ref == 'refs/heads/master'
       uses: marvinpinto/action-automatic-releases@latest
@@ -44,7 +38,6 @@ jobs:
         automatic_release_tag: "latest"
         title: "Latest  build"
         files: DCDoom.bin
-
     - name: Create release form main branch
       if: github.ref == 'refs/heads/main'
       uses: marvinpinto/action-automatic-releases@latest

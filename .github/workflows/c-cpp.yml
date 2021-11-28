@@ -13,6 +13,9 @@ jobs:
     container: haydenkow/nu-dcdev:release-4.7.3-rc3
     steps:
     
+    - name: Install dependencies
+      run: |
+        sudo apt install git zip
     - uses: actions/checkout@v2
     - run: |
         git fetch --prune --unshallow

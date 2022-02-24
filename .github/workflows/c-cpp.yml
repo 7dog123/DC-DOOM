@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: haydenkow/nu-dcdev:release-4.7.3-rc3
+    container: ghcr.io/7dog123/7dog123/kos-docker-image:latest
     steps:
     
     - uses: actions/checkout@v2

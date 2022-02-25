@@ -81,6 +81,8 @@ OBJS3 = \
 
 OBJS = $(OBJS1) $(OBJS2) $(OBJS3)
 
+SUBDIRS = libWildMidi
+
 KOS_CFLAGS += -ffast-math -DNORMALUNIX -DUNROLL -Diabs=abs -fsigned-char
 KOS_CFLAGS += -DDANZEFF_KOS
 #KOS_CFLAGS += -I$(KOS_BASE)/../kos-ports/include/wildmidi

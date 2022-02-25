@@ -17,6 +17,7 @@ jobs:
     
     - name: Compile doom
       run: |
+        . "$KOS/environ.sh"
         make
         ls
     - name: Get short SHA

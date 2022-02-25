@@ -17,6 +17,8 @@ jobs:
     
     - name: Compile doom
       run: |
+        INSTALL_DIR="/opt/toolchains/dc"
+        KOS="$INSTALL_DIR/kos"
         . "$KOS/environ.sh"
         make
         ls
